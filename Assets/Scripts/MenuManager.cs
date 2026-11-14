@@ -49,11 +49,13 @@ public class MenuManager : MonoBehaviour {
     {
         Debug.Log("Abriendo Opciones");
         OptionsPanel.SetActive(true);
+        menuPanel.SetActive (false);
     }
 
     public void OnRegresar()
     {
         OptionsPanel.SetActive(false);
+        menuPanel.SetActive(true);
     }
 
     public void OnMenu()
@@ -64,5 +66,6 @@ public class MenuManager : MonoBehaviour {
     public void OnExit()
     {
         Debug.Log("Cerrando");
+        Application.Quit();
     }
 }
