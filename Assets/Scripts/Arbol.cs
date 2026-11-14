@@ -2,14 +2,19 @@ using UnityEngine;
 
 public class Arbol : MonoBehaviour
 {
+    public static int arbol;
     public bool jugador;
 
-
+    private void Start()
+    {
+        arbol = 0;
+    }
     private void OnMouseDown()
     {
         if (jugador)
         {
             Destroy(gameObject);
+            arbol += 1;
         }
     }
 

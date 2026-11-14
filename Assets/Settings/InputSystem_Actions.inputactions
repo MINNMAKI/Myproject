@@ -1024,6 +1024,16 @@
                     "interactions": "",
                     "initialStateCheck": true,
                     "priority": 0
+                },
+                {
+                    "name": "Hablar",
+                    "type": "Button",
+                    "id": "1b82b7f3-2532-4c6d-a2bb-3a093f2b9b56",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
                 }
             ],
             "bindings": [
@@ -1081,6 +1091,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "796d1796-b31a-43d0-8b49-6f573f2b321a",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hablar",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

@@ -1,15 +1,41 @@
 using UnityEngine;
+using UnityEngine.Rendering.VirtualTexturing;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour {
 
-    public GameObject menuPanel, OptionsPanel;
+    public GameObject menuPanel, OptionsPanel, GameOverPanel;
 
+    public int floresObjetivo, ArrbolesObjetivo;
+    bool msioncompletada;
 
     private void Start()
     {
         menuPanel.SetActive(true);
         OptionsPanel.SetActive(false);
+        GameOverPanel.SetActive(false);
+        msioncompletada = false;
     }
+
+    private void Update()
+    {
+        if(Flower.flowers >= floresObjetivo && Arbol.arbol >= ArrbolesObjetivo)
+        {
+            msioncompletada = true;
+        }
+
+        if (msioncompletada)
+        {
+            ActiveGameOver();
+        }
+    }
+
+
+    void ActiveGameOver()
+    {
+        GameOverPanel.SetActive (true);
+    }
+
 
 
 
@@ -28,6 +54,11 @@ public class MenuManager : MonoBehaviour {
     public void OnRegresar()
     {
         OptionsPanel.SetActive(false);
+    }
+
+    public void OnMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     public void OnExit()
